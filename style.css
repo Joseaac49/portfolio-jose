@@ -1,14 +1,17 @@
+/* Fuente limpia y fondo claro */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
+/* Tarjeta central */
 .presentacion {
   max-width: 900px;
   background: #ffffff;
@@ -20,6 +23,7 @@ body {
   animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Imagen de perfil */
 .presentacion img {
   width: 160px;
   height: 160px;
@@ -29,11 +33,13 @@ body {
   border: 3px solid #0a66c2;
 }
 
+/* Título */
 .presentacion h2 {
   margin-top: 0;
   margin-bottom: 0.5em;
 }
 
+/* Botones */
 .btn {
   display: inline-block;
   margin-top: 1em;
@@ -51,6 +57,7 @@ body {
   background: #084a9c;
 }
 
+/* Animación */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -62,13 +69,26 @@ body {
   }
 }
 
+/* Versión mobile */
 @media screen and (max-width: 768px) {
+  body {
+    padding: 2em 1em;
+    height: auto;
+  }
+
   .presentacion {
     flex-direction: column;
     text-align: center;
+    padding: 1.5em;
   }
 
   .presentacion img {
     margin: 0 0 1em 0;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5em 0;
   }
 }
