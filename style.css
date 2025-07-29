@@ -1,99 +1,96 @@
-/* ====== ESTILOS GENERALES ====== */
-body {
+/* ======== RESET ======== */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    background-color: #6b3f3f; /* color de fondo general */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
-/* ====== TARJETA PRINCIPAL ====== */
-.card {
-    background-color: #2a9d8f;
-    border-radius: 15px;
-    padding: 20px;
+body {
+    background: linear-gradient(135deg, #ffffff, #f8e4e4); /* Blanco con rojizo retro */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
+    animation: fadeBackground 1.5s ease-in-out;
+}
+
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* ====== FOTO DE PERFIL ====== */
-/* ====== FOTO DE PERFIL ====== */
+/* ======== FOTO DE PERFIL ======== */
 .profile-pic {
-    width: 120px;         /* tamaño reducido */
-    height: 120px;        /* tamaño reducido */
-    border-radius: 50%;   /* mantiene la forma redonda */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     border: 3px solid #0d6efd;
     margin-bottom: 15px;
-    object-fit: cover;    /* evita deformaciones */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 1.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.profile-pic:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
 
-/* ====== TITULO ====== */
+/* ======== NOMBRE ======== */
 h1 {
-    font-size: 22px;
+    font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #222;
+    animation: fadeIn 1.5s ease;
 }
 
-/* ====== DESCRIPCION ====== */
-.description {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 20px;
-    padding: 0 10px;
-}
-
-/* ====== BOTONES ====== */
-.buttons-container {
+/* ======== BOTONES ======== */
+.buttons {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 15px;
+.buttons a {
+    text-decoration: none;
     background-color: #0d6efd;
     color: white;
+    padding: 12px;
     border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    flex: 1 1 45%;
-    min-width: 140px;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-.btn i {
-    margin-right: 6px;
+.buttons a:hover {
+    background-color: #084298;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
-    background-color: #0b5ed7;
+/* ======== ANIMACIONES ======== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* ====== BOTON LINKEDIN ====== */
-.btn.linkedin {
-    background-color: #0a66c2;
+@keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
-
-.btn.linkedin:hover {
-    background-color: #004182;
-}
-
-/* ====== RESPONSIVE ====== */
-@media (max-width: 480px) {
-    .buttons-container {
-        flex-direction: column;
-    }
-
-    .btn {
-        flex: 1 1 100%;
-    }
+@keyframes fadeBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
