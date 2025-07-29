@@ -1,96 +1,87 @@
-/* ======== RESET ======== */
-* {
+/* Fondo retro */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #fff8f8, #fce4e4);
+    color: #333;
 }
 
-body {
-    background: linear-gradient(135deg, #ffffff, #f8e4e4); /* Blanco con rojizo retro */
-    color: #333;
+/* Contenedor principal */
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    animation: fadeBackground 1.5s ease-in-out;
+    height: 100vh;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-
-/* ======== CONTENEDOR PRINCIPAL ======== */
-.container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    max-width: 400px;
-    width: 90%;
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* ======== FOTO DE PERFIL ======== */
+/* Imagen de perfil */
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 3px solid #0d6efd;
     margin-bottom: 15px;
+    border: 3px solid #ff6b6b;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: slideDown 1.2s ease;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-pic:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-}
-
-/* ======== NOMBRE ======== */
+/* Título */
 h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    animation: fadeIn 1.5s ease;
-}
-
-/* ======== BOTONES ======== */
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.buttons a {
-    text-decoration: none;
-    background-color: #0d6efd;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 1rem;
+    font-size: 2.5rem;
+    margin: 10px 0;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
 }
 
-.buttons a:hover {
-    background-color: #084298;
+/* Descripción */
+p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+/* Contenedor de botones */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botones generales */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover en botones */
+.btn:hover {
+    background-color: #e84141;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ======== ANIMACIONES ======== */
+/* Botón LinkedIn */
+.btn.linkedin {
+    background-color: #0077b5;
+}
+
+.btn.linkedin:hover {
+    background-color: #005582;
+}
+
+/* Animación de aparición */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-@keyframes fadeBackground {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
