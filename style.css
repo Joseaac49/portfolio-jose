@@ -77,21 +77,25 @@ p {
 #projects { scroll-margin-top: 0; } /* no hay header sticky */
 .projects { padding: 24px 18px 60px; }
 
-.container-narrow {
+/* Contenedor angosto y centrado del título */
+.container-narrow{
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 8px;
+  display: flex;
+  justify-content: center;   /* centra el contenido (el h2) */
 }
 
-.section-title {
-  display: block;
-  text-align: center;
+/* Título CENTRADO sí o sí */
+#projects .section-title{
+  text-align: center !important;
   font-size: 2rem;
+  font-weight: 800;
   margin: 10px 0 22px;
   letter-spacing: .2px;
-  font-weight: 800;
 }
 
+/* Grid de tarjetas */
 .grid {
   max-width: 1000px;
   margin: 0 auto;
@@ -100,6 +104,7 @@ p {
   gap: 16px;
 }
 
+/* Tarjetas */
 .card {
   background: #fff;
   border-radius: 16px;
@@ -135,30 +140,4 @@ p {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-/* Contenedor angosto del título */
-.container-narrow{
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 8px;
 
-  /* Extra por si alguna regla lo pisa */
-  display: flex;
-  justify-content: center;
-}
-
-/* Centrado del título sí o sí */
-#projects .section-title{
-  text-align: center !important;
-  font-size: 2rem;
-  font-weight: 800;
-  margin: 10px 0 22px;
-  letter-spacing: .2px;
-}
-
-/* Asegura que las cards queden alineadas normales */
-#projects{ text-align: center; }           /* para centrar el inline-block si hiciera falta */
-#projects .grid{
-  text-align: initial;
-  max-width: 1000px;
-  margin: 0 auto;
-}
