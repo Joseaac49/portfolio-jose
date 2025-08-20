@@ -4,42 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Jose Aguilar – QA & Dev</title>
+
+  <!-- Meta para compartir -->
+  <meta name="description" content="Portfolio de Jose Aguilar · QA Tester y Frontend Dev. Proyectos con Cypress, Selenium y más.">
+  <meta property="og:title" content="Jose Aguilar · QA & Dev">
+  <meta property="og:description" content="Proyectos con Cypress, Selenium y más.">
+  <meta property="og:image" content="https://joseaac49.github.io/portfolio-jose/foto-jose.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <main>
     <!-- HERO -->
     <section id="home" class="container">
-      <img src="foto-jose.jpg" alt="Foto de Jose Aguilar" class="profile-pic"/>
+      <img src="foto-jose.jpg" alt="Foto de Jose Aguilar" class="profile-pic" loading="lazy" decoding="async">
       <h1>QA Tester • Frontend Dev</h1>
       <p>Busco aportar a la mejora continua y asegurar la calidad de productos en entornos IT y sistemas críticos para el negocio.</p>
 
       <div class="buttons">
         <a href="cv-itjose.pdf" download class="btn">📥 CV (ES)</a>
         <a href="cv-jose-en.pdf" download class="btn">📥 CV (EN)</a>
-        <a href="https://www.linkedin.com/in/jose-aguilar-2a798222a/" target="_blank" rel="noopener" class="btn linkedin">in LinkedIn</a>
-        <a href="https://github.com/Joseaac49" target="_blank" rel="noopener" class="btn github">GitHub</a>
+        <a href="https://www.linkedin.com/in/jose-aguilar-2a798222a/" target="_blank" rel="noopener noreferrer" class="btn linkedin">in LinkedIn</a>
+        <a href="https://github.com/Joseaac49" target="_blank" rel="noopener noreferrer" class="btn github">GitHub</a>
       </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="projects">
-      <h2 class="section-title">Proyectos destacados</h2>
+      <div class="container-narrow">
+        <h2 class="section-title">Proyectos destacados</h2>
+      </div>
 
       <div class="grid">
-        <article class="card">
+        <article class="card" data-href="https://github.com/Joseaac49/cypress-e2e-demo">
           <h3>🧪 Cypress E2E Demo</h3>
           <p>Suite de pruebas end-to-end con Cypress. Scripts, estructura de carpetas y README con instrucciones.</p>
           <div class="actions">
-            <a class="btn small" target="_blank" rel="noopener" href="https://github.com/Joseaac49/cypress-e2e-demo">Ver repo</a>
+            <a class="btn small" target="_blank" rel="noopener noreferrer"
+               href="https://github.com/Joseaac49/cypress-e2e-demo">Ver repo</a>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-href="https://github.com/Joseaac49/selenium-login-demo">
           <h3>🤖 Selenium Login Flow (Python)</h3>
           <p>Pruebas UI con Selenium + PyTest: búsqueda en Google y flujo de login/logout en Saucedemo, con waits explícitos.</p>
           <div class="actions">
-            <a class="btn small" target="_blank" rel="noopener" href="https://github.com/Joseaac49/selenium-login-demo">Ver repo</a>
+            <a class="btn small" target="_blank" rel="noopener noreferrer"
+               href="https://github.com/Joseaac49/selenium-login-demo">Ver repo</a>
           </div>
         </article>
 
@@ -47,8 +60,8 @@
           <h3>💸 Gasto Smart</h3>
           <p>App de gestión de gastos personales hecha en React. (Agregá tu link cuando lo tengas listo).</p>
           <div class="actions">
-            <!-- Reemplazá # por tu URL de demo o repo -->
-            <a class="btn small disabled" href="#" title="Reemplaza con tu enlace">Próximamente</a>
+            <!-- Reemplazá # por tu URL de demo o repo cuando esté -->
+            <a class="btn small disabled" href="#" title="Próximamente">Próximamente</a>
           </div>
         </article>
       </div>
@@ -62,6 +75,13 @@
   <script>
     // año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // hace clickeables las cards completas sin interferir con los <a> internos
+    document.querySelectorAll('.card[data-href]').forEach(card => {
+      card.addEventListener('click', e => {
+        if (!e.target.closest('a')) window.open(card.dataset.href, '_blank', 'noopener');
+      });
+    });
   </script>
 </body>
 </html>
